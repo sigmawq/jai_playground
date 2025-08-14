@@ -1,6 +1,7 @@
 #import "Basic";
 #import "Hash_Table";
 #import "Random";
+#import "Compiler";
 #import "jaison";
 
 BUILD_TIME :: #run to_calendar(current_time_consensus(), .UTC);
@@ -235,7 +236,13 @@ print_two_point_zero :: ($format_string: string) #expand {
 	#insert real_format_string;
 }
 
+print_ast :: (node: *Type_Info) {
+	pretty_print(node);
+}
+
 main :: () {
+	print("================== RUNTIME ====================\n");
+	
 	{
 		x := 1;
 		y := 15;

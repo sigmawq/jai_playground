@@ -1,6 +1,7 @@
 #import "Basic";
 #import "Compiler";
 #import "File";
+#import,file "jai_playground.jai";
 
 #run build();
 
@@ -75,6 +76,10 @@ message_loop :: (workspace: Workspace) {
 				defer i += 1;
 				
 				proc := typechecked.procedure_bodies[i].expression;
+				if proc.header.name == "main" {
+					
+				}
+				
 				v := proc.header.enclosing_load.enclosing_import;
 				if v {
 					if v.module_name == "" {

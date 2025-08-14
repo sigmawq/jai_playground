@@ -1,4 +1,4 @@
-// Workspace: My lovely program
+// Workspace: Target Program
 
 //
 // #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:9.
@@ -8,7 +8,7 @@ CONST :: 1;
 //
 // #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:134.
 //
-RANDOM_NUMBERS :: s64 .[ 866, 3018, 9022, 2319, 7686, 9239, 9579, 4917, 5861, 6700, 9636, ];
+RANDOM_NUMBERS :: s64 .[ 6802, 3674, 6350, 9487, 1126, 3911, 5867, 1653, 7845, 8252, 6148, ];
 
 //
 // #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:49.
@@ -52,13 +52,3 @@ only_buildings :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expa
 	}	
 }
 
-
-//
-// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:236.
-//
-print("some string % suffix\n", `x + `y);
-
-//
-// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:236.
-//
-print("some string %\n", `y);
