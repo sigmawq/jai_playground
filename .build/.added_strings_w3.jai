@@ -10,7 +10,7 @@ CONST :: 1;
 //
 only_nones :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
 	for * v, i: entity_list.data {
-		if v.type != .NONE contnue;
+		if v.type != .NONE continue;
 		#if flags & .POINTER {
 			`it := v;
 		} else {
@@ -23,7 +23,7 @@ only_nones :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
 
 only_players :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
 	for * v, i: entity_list.data {
-		if v.type != .PLAYER contnue;
+		if v.type != .PLAYER continue;
 		#if flags & .POINTER {
 			`it := v;
 		} else {
@@ -36,7 +36,7 @@ only_players :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand
 
 only_buildings :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
 	for * v, i: entity_list.data {
-		if v.type != .BUILDING contnue;
+		if v.type != .BUILDING continue;
 		#if flags & .POINTER {
 			`it := v;
 		} else {
@@ -49,6 +49,16 @@ only_buildings :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expa
 
 
 //
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:235.
+//
+print("some string % suffix\n", `x + `y);
+
+//
 // #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:133.
 //
-RANDOM_NUMBERS :: s64 .[ 5762, 6698, 6878, 5903, 8070, 7687, 1099, 1493, 5477, 2732, 3236, ];
+RANDOM_NUMBERS :: s64 .[ 7186, 3082, 3102, 7871, 5942, 7159, 4571, 6581, 5589, 604, 3300, ];
+
+//
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:235.
+//
+print("some string %\n", `y);

@@ -169,7 +169,83 @@ use_generated_random_numbers :: () {
 	print("compile time generated random numbers: %\n", pretty(RANDOM_NUMBERS));
 }
 
+print_two_point_zero :: ($format_string: string) #expand {
+	real_format_string :: #run -> string {
+		print("invoke print_two_point_zero with baked format string: %\n", format_string);
+		print_string: String_Builder;
+		append(*print_string, "print(\"");
+		current_arg_begin: s64 = -1;
+		builder: String_Builder;
+		args: [..]string;
+		reading_inner_body: bool;
+		for format_string {
+			print("%\n", it);
+			if reading_inner_body {
+				if it == #char "}" {
+					arg: string;
+					arg.data = format_string.data + current_arg_begin +1;
+					arg.count = it_index - current_arg_begin - 1;
+					reading_inner_body = false;
+					current_arg_begin = -1;
+					print("new arg %\n", arg);
+					
+					append(*print_string, "%");
+					array_add(*args, arg);
+				}
+			} else {
+				if current_arg_begin == -1 {
+					current_arg_begin = it_index;
+				}
+				if it == #char "{" {
+					arg: string;
+					arg.data = format_string.data + current_arg_begin;
+					arg.count = it_index - current_arg_begin;
+					current_arg_begin = -1;
+					print("new string %\n", arg);
+					
+					// append(*print_string, arg);
+					
+					reading_inner_body = true;
+					current_arg_begin = it_index;
+				} else {
+					if it == 10 { // don't convert newline to real newline in generated code!
+						append(*print_string, "\\n");	
+					} else {
+						append(*print_string, it);	
+					}
+				}
+			}
+		}
+		
+		if reading_inner_body {
+			assert(false, "unmatched paran somewhere");
+		}
+		
+		append(*print_string, "\", ");
+		for args {
+			append(*print_string, it);
+		}
+		append(*print_string, ");");
+		str := builder_to_string(*print_string);
+		print("converted string to print: %\n", str);
+		
+		return str;
+	}
+	
+	#insert real_format_string;
+}
+
 main :: () {
+	{
+		x := 1;
+		y := 15;
+		// passing backticks is ugly.. but otherwise you'll to parse everything yourself which is not a small task to do. 
+		// also error reporting sucks because it reports errors from generated code
+		print_two_point_zero("some string {`x + `y} suffix\n");
+		print_two_point_zero("some string {`y}\n");
+	}
+	
+	
 	macro();
 	entities();
 	use_generated_random_numbers();
