@@ -1,0 +1,54 @@
+// Workspace: My lovely program
+
+//
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:8.
+//
+CONST :: 1;
+
+//
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:48.
+//
+only_nones :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
+	for * v, i: entity_list.data {
+		if v.type != .NONE contnue;
+		#if flags & .POINTER {
+			`it := v;
+		} else {
+			`it := v.*;
+		}
+		`it_index := i;
+		#insert body;
+	}	
+}
+
+only_players :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
+	for * v, i: entity_list.data {
+		if v.type != .PLAYER contnue;
+		#if flags & .POINTER {
+			`it := v;
+		} else {
+			`it := v.*;
+		}
+		`it_index := i;
+		#insert body;
+	}	
+}
+
+only_buildings :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
+	for * v, i: entity_list.data {
+		if v.type != .BUILDING contnue;
+		#if flags & .POINTER {
+			`it := v;
+		} else {
+			`it := v.*;
+		}
+		`it_index := i;
+		#insert body;
+	}	
+}
+
+
+//
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:133.
+//
+RANDOM_NUMBERS :: s64 .[ 5762, 6698, 6878, 5903, 8070, 7687, 1099, 1493, 5477, 2732, 3236, ];

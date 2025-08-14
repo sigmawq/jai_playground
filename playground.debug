@@ -1,0 +1,16 @@
+// raddbg 0.9.21 project file
+
+recent_file: path: "jai_playground.jai"
+recent_file: path: "../../programs/jai/modules/basic/print.jai"
+recent_file: path: "../../programs/jai/modules/runtime_support.jai"
+recent_file: path: "../../Programs/jai/modules/Hash_Table.jai"
+recent_file: path: "../../Programs/jai/modules/Hash.jai"
+recent_file: path: "D:/a/_work/1/s/src/vctools/crt/vcstartup/src/startup/exe_common.inl"
+target:
+{
+  executable: "target.exe"
+  working_directory: ""
+  enabled: 1
+}
+type_view
+type_view
