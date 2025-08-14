@@ -23,7 +23,7 @@ build :: () {
 	compiler_begin_intercept(w);
 	add_build_file(tprint("jai_playground.jai"), w); 
 	
-	// message_loop(w);
+	message_loop(w);
 	
 	compiler_end_intercept(w);
 	
@@ -75,6 +75,12 @@ message_loop :: (workspace: Workspace) {
 				defer i += 1;
 				
 				proc := typechecked.procedure_bodies[i].expression;
+				v := proc.header.enclosing_load.enclosing_import;
+				if v {
+					if v.module_name == "" {
+						print("proc: % | module name: %\n", proc.header.name, v.module_name);
+					}
+				}
 				
 				if proc.header.name != "foo" continue;
 				if foo_done continue;

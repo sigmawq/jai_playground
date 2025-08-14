@@ -49,14 +49,14 @@ only_buildings :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expa
 
 
 //
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:133.
+//
+RANDOM_NUMBERS :: s64 .[ 818, 922, 238, 6463, 70, 8743, 4667, 2613, 1701, 5468, 5092, ];
+
+//
 // #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:235.
 //
 print("some string % suffix\n", `x + `y);
-
-//
-// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:133.
-//
-RANDOM_NUMBERS :: s64 .[ 7186, 3082, 3102, 7871, 5942, 7159, 4571, 6581, 5589, 604, 3300, ];
 
 //
 // #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:235.
