@@ -1,17 +1,12 @@
 // Workspace: My lovely program
 
 //
-// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:9.
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:11.
 //
 CONST :: 1;
 
 //
-// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:134.
-//
-RANDOM_NUMBERS :: s64 .[ 866, 3018, 9022, 2319, 7686, 9239, 9579, 4917, 5861, 6700, 9636, ];
-
-//
-// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:49.
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:51.
 //
 only_nones :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
 	for * v, i: entity_list.data {
@@ -23,7 +18,7 @@ only_nones :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
 		}
 		`it_index := i;
 		#insert body;
-	}	
+	}
 }
 
 only_players :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
@@ -36,7 +31,7 @@ only_players :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand
 		}
 		`it_index := i;
 		#insert body;
-	}	
+	}
 }
 
 only_buildings :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expand {
@@ -49,16 +44,11 @@ only_buildings :: (entity_list: Entity_List, body: Code, flags: For_Flags) #expa
 		}
 		`it_index := i;
 		#insert body;
-	}	
+	}
 }
 
 
 //
-// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:236.
+// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:136.
 //
-print("some string % suffix\n", `x + `y);
-
-//
-// #insert text. Generated from C:/Users/sigmawq/RealProjects/jai_playground/jai_playground.jai:236.
-//
-print("some string %\n", `y);
+RANDOM_NUMBERS :: s64 .[ 6978, 3402, 2590, 4255, 166, 791, 8203, 4837, 5557, 1372, 5972, ];

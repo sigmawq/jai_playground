@@ -1,0 +1,1 @@
+decl count from non-file sources:0
